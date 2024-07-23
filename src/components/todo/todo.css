@@ -1,10 +1,29 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+.todo-container {
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
     text-align: center;
 }
+.todo-title {
+    color: red;
+    font-size: 30px;
+    font-weight: 600;
+}
 
+.todo-input,
+.todo-button {
+    padding: 5px;
+    margin: 5px;
+}
+
+.todo-data {
+    margin-top: 40px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 .logo {
     height: 6em;
     padding: 1.5em;
@@ -28,15 +47,11 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
+    .logo {
         animation: logo-spin infinite 20s linear;
     }
 }
-
-.card {
-    padding: 2em;
-}
-
-.read-the-docs {
-    color: #888;
+.todo-item {
+    display: flex;
+    justify-content: space-between;
 }
