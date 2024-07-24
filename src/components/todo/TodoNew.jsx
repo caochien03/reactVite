@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 function TodoNew(props) {
+    // eslint-disable-next-line react/prop-types
     const { addNewTodo } = props;
     const [valueInput, setValueInput] = useState("");
     const handleOnChange = (value) => {
