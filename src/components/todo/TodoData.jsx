@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function TodoData({ todoList, deleteTodo }) {
     const handleDelete = (idValue) => {
         deleteTodo(idValue);
