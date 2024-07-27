@@ -1,5 +1,15 @@
+import TableUser from "../components/user/tableuser";
+import UserForm from "../components/user/userform";
+
 function UserPage() {
-    return <div>users page</div>;
+    return (
+        <div>
+            <div>
+                <UserForm />
+                <TableUser />
+            </div>
+        </div>
+    );
 }
 
 export default UserPage;
