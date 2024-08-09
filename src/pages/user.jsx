@@ -17,7 +17,7 @@ function UserPage() {
         <div>
             <div>
                 <UserForm loadUser={loadUser} />
-                <TableUser dataUsers={dataUsers} />
+                <TableUser dataUsers={dataUsers} loadUser={loadUser} />
             </div>
         </div>
     );
