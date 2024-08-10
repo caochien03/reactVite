@@ -2,16 +2,29 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import ModalUpdateUser from "./modalUpdateUser";
 import { useState } from "react";
+import ViewDetailUser from "./viewDetailUser";
 
 function TableUser({ dataUsers, loadUser }) {
     const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
     const [dataUpdate, setDataUpdate] = useState(null);
+    const [detailUser, setDetailUser] = useState(null);
+    const [isDetailOpen, setIsDetailOpen] = useState(false);
     const columns = [
         {
             title: "ID",
             dataIndex: "_id",
             render: (_, record) => {
-                return <a href="#">{record._id}</a>;
+                return (
+                    <a
+                        href="#"
+                        onClick={() => {
+                            setDetailUser(record);
+                            setIsDetailOpen(true);
+                        }}
+                    >
+                        {record._id}
+                    </a>
+                );
             },
         },
         {
@@ -51,6 +64,13 @@ function TableUser({ dataUsers, loadUser }) {
                 dataUpdate={dataUpdate}
                 setDataUpdate={setDataUpdate}
                 loadUser={loadUser}
+            />
+            <ViewDetailUser
+                loadUser={loadUser}
+                detailUser={detailUser}
+                setDetailUser={setDetailUser}
+                isDetailOpen={isDetailOpen}
+                setIsDetailOpen={setIsDetailOpen}
             />
         </>
     );
