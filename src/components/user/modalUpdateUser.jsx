@@ -2,7 +2,6 @@ import { Input, notification, Modal } from "antd";
 import { useEffect, useState } from "react";
 import { updateUserAPI } from "../../services/apiService";
 const ModalUpdateUser = (props) => {
-    // eslint-disable-next-line react/prop-types
     const {
         isModalUpdateOpen,
         setIsModalUpdateOpen,

@@ -1,8 +1,9 @@
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { EditOutlined } from "@ant-design/icons";
 import { Table } from "antd";
 import ModalUpdateUser from "./modalUpdateUser";
 import { useState } from "react";
 import ViewDetailUser from "./viewDetailUser";
+import DeleteUser from "./deleteUser";
 
 function TableUser({ dataUsers, loadUser }) {
     const [isModalUpdateOpen, setIsModalUpdateOpen] = useState(false);
@@ -47,9 +48,7 @@ function TableUser({ dataUsers, loadUser }) {
                         }}
                         style={{ cursor: "pointer", color: "orange" }}
                     />
-                    <DeleteOutlined
-                        style={{ cursor: "pointer", color: "red" }}
-                    />
+                    <DeleteUser loadUser={loadUser} dataDelete={record} />
                 </div>
             ),
         },
