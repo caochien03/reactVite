@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 import { Menu } from "antd";
-import { UserOutlined, HomeOutlined, ProductOutlined } from "@ant-design/icons";
+import {
+    UserOutlined,
+    HomeOutlined,
+    ProductOutlined,
+    SettingOutlined,
+} from "@ant-design/icons";
 import { useState } from "react";
 
 function Header() {
@@ -24,6 +29,21 @@ function Header() {
             label: <Link to={"/products"}>Products</Link>,
             key: "products",
             icon: <ProductOutlined />,
+        },
+        {
+            label: "Cài đặt",
+            key: "setting",
+            icon: <SettingOutlined />,
+            children: [
+                {
+                    label: <Link to={"/login"}>Đăng nhập</Link>,
+                    key: "login",
+                },
+                {
+                    label: "Đăng xuất",
+                    key: "logout",
+                },
+            ],
         },
     ];
     return (
